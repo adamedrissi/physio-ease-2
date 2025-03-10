@@ -1,0 +1,20 @@
+/* Default light mode styles */
+body {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Figtree', sans-serif;
+  margin: 0;
+  padding: 0;
+}
