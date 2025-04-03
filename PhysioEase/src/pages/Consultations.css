@@ -36,7 +36,14 @@
     padding: 20px;
     width: 400px;
     border-radius: 8px;
-  }
+    color: #333;
+}
+
+/* Dark mode overrides */
+body.dark-mode .modal-content {
+  background: #333;
+  color: #fff;
+}
   
   .form-group {
     margin-bottom: 15px;

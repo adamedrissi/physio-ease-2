@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Consultations.css';
 
 function Consultations() {
@@ -20,6 +21,7 @@ function Consultations() {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [scheduleDateTime, setScheduleDateTime] = useState('');
+  const { t } = useTranslation();
 
   const openModal = (doctor) => {
     setSelectedDoctor(doctor);
@@ -41,8 +43,8 @@ function Consultations() {
 
   return (
     <div>
-      <h1>Consultations</h1>
-      <p>Schedule your in-person physiotherapy consultation.</p>
+      <h1>{t('consultations')}</h1>
+      <p>{t('consultationTag')}</p>
       <div className="consultations-container">
         {consultationsData.map(doctor => (
           <div 
@@ -51,9 +53,9 @@ function Consultations() {
             onClick={() => openModal(doctor)}
           >
             <h3>{doctor.fullName}</h3>
-            <p><strong>Speciality:</strong> {doctor.speciality}</p>
-            <p><strong>Location:</strong> {doctor.location}</p>
-            <p><strong>Email:</strong> {doctor.email}</p>
+            <p><strong>{t('speciality')}</strong> {doctor.speciality}</p>
+            <p><strong>{t('location')}</strong> {doctor.location}</p>
+            <p><strong>{t('email')}</strong> {doctor.email}</p>
           </div>
         ))}
       </div>
@@ -61,10 +63,10 @@ function Consultations() {
       {isModalOpen && selectedDoctor && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <h2>Schedule Consultation with {selectedDoctor.fullName}</h2>
+            <h2>{t('scheduleWith')}{selectedDoctor.fullName}</h2>
             <form onSubmit={handleSchedule}>
               <div className="form-group">
-                <label>Select Date and Time:</label>
+                <label>{t('selectDateTime')}</label>
                 <input 
                   type="datetime-local" 
                   value={scheduleDateTime} 
@@ -73,8 +75,8 @@ function Consultations() {
                 />
               </div>
               <div className="modal-buttons">
-                <button type="button" onClick={closeModal}>Cancel</button>
-                <button type="submit">Schedule</button>
+                <button type="button" onClick={closeModal}>{t('cancel')}</button>
+                <button type="submit">{t('schedule')}</button>
               </div>
             </form>
           </div>

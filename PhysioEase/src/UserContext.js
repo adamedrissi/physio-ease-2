@@ -10,7 +10,8 @@ export const UserProvider = ({ children }) => {
     profilePicture: '',
     dateOfBirth: '',
     height: '',
-    weight: ''
+    weight: '',
+    trackingPlanCompleted: false,
   });
 
   return (

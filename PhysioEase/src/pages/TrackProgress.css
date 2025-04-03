@@ -1,0 +1,14 @@
+.feedback-modal {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    background: #f9f9f9;
+    color: #333;
+    border-radius: 8px;
+  }
+  
+  body.dark-mode .feedback-modal {
+    background: #333 !important;
+    color: #fff !important;
+    border-color: #555 !important;
+  }

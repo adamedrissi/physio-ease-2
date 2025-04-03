@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../UserContext';
+import { useTranslation } from 'react-i18next';
+import './TrackProgress.css';
 
 function TrackProgress() {
-  const [completed, setCompleted] = useState(false);
+  const { user, setUser } = useContext(UserContext);
   const [giveFeedback, setGiveFeedback] = useState(false);
+  const { t } = useTranslation();
   const [feedback, setFeedback] = useState({
     question1: '',
     question2: '',
@@ -10,7 +14,7 @@ function TrackProgress() {
   });
 
   const handleCompletedChange = (e) => {
-    setCompleted(e.target.checked);
+    setUser({ ...user, trackingPlanCompleted: e.target.checked });
   };
 
   const handleFeedbackCheckbox = (e) => {
@@ -50,15 +54,15 @@ function TrackProgress() {
 
   return (
     <div>
-      <h1>Track Progress</h1>
+      <h1>{t('progressTrack')}</h1>
       <div>
         <label>
           <input 
             type="checkbox" 
-            checked={completed}
+            checked={user.trackingPlanCompleted}
             onChange={handleCompletedChange} 
           />
-          Weekly Tracking Plan Completed?
+          {t('completeTracking')}
         </label>
       </div>
       <div>
@@ -68,7 +72,7 @@ function TrackProgress() {
             checked={giveFeedback}
             onChange={handleFeedbackCheckbox} 
           />
-          Give Feedback?
+          {t('giveFeedback')}
         </label>
       </div>
 
@@ -79,10 +83,10 @@ function TrackProgress() {
           marginTop: '20px',
           background: '#f9f9f9'
         }}>
-          <h2>Weekly Exercise Plan Feedback</h2>
+          <h2>{t('weekFeedback')}</h2>
           <form onSubmit={handleSubmitFeedback}>
             <div>
-              <p>1. On a scale from 0 to 5, how much have you improved compared to last week?</p>
+              <p>{t('qOne')}</p>
               <div>
               <label>
                   <input 
@@ -141,7 +145,7 @@ function TrackProgress() {
               </div>
             </div>
             <div>
-              <p>2. On a scale from 0 to 5, how efective were the videos that were given?</p>
+              <p>{t('qTwo')}</p>
               <div>
               <label>
                   <input 
@@ -200,7 +204,7 @@ function TrackProgress() {
               </div>
             </div>
             <div>
-              <label>3. Any specific feedback?</label>
+              <label>{t('qThree')}</label>
               <br />
               <textarea 
                 name="specificFeedback" 
@@ -211,8 +215,8 @@ function TrackProgress() {
               />
             </div>
             <div style={{ marginTop: '10px' }}>
-              <button type="button" onClick={handleCancelFeedback} style={{ marginRight: '10px' }}>Cancel</button>
-              <button type="submit">Submit</button>
+              <button type="button" onClick={handleCancelFeedback} style={{ marginRight: '10px' }}>{t('cancel')}</button>
+              <button type="submit">{t('submit')}</button>
             </div>
           </form>
         </div>
