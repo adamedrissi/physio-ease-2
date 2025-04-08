@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=16846608&assignment_repo_type=AssignmentRepo)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### ![Contributors](https://img.shields.io/badge/Contributors-blue)
+- **Adam El Edrissi Calvo Flores** - 2336827
+- **Jamil Ahmed** - 2376887
+- **Abdullah Al Jawad** - 2300171
+- **Muhammad Rohail Saleem Saleem** - 2206750
+- **Mustak Kabir** - 2326939
+- **Samad Adekunle Olaibi** - 2214463
+- **Sharun Jeyaraman** - 2376759
+- **Md Nafiul Islam Khan**- 2377549
 
-## Available Scripts
+# PhysioEase Web Application
 
-In the project directory, you can run:
+## Table of Contents
+- [Problem Statement](#problem-statement)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Frontend Development](#frontend-development)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### `npm start`
+## Problem Statement
+Access to quality physiotherapy care is a significant challenge, particularly for individuals in rural or underserved areas and those with demanding schedules.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Traditional in-person physiotherapy services lack the flexibility and technological integration needed for modern healthcare. Patients face difficulties in finding specialists, scheduling appointments, and maintaining consistent recovery routines. 
+Meanwhile, physiotherapists struggle with practice management, remote patient tracking, and expanding their reach
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Our web application aims to bridge these gaps by providing a platform for remote consultations and continuous care,enhancing accessibility and efficiency. This project aligns with SDG 3 (Good Health and Well-being) by improving healthcare access and quality, and SDG 10 (Reduced Inequalities) by breaking down geographic barriers and offering equal treatment opportunities.
 
-### `npm test`
+## Features
+- User Authentication and Management
+- Profile Management and Role-Based Access Control
+- Physiotherapist Search and Initial Assessment
+- Appointment Booking and Scheduling
+- Exercise and Treatment Plan Management
+- Exercise Adherence and Progress Tracking
+- Weekly Feedback and Survey Collection
+- Remote and In-Person Consultation
+- Document Upload and Management
+- Notifications and Reminders
+- Feedback and Review System
+- Final Touches and Quality Assurance
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+- **Backend**: Java, Spring Boot
+- **Frontend**: React, Redux for state management
+- **Database**: (PostgreSQL)
+- **Build Tools**: Maven for backend, npm for frontend
+- **Other Tools**: Docker, postman for Testing and  API documentation
 
-### `npm run build`
+## Prerequisites
+- Java JDK (21)
+- Node.js latest version
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Documentation
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Frontend Development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing
+**Adam El Edrissi Calvo Flores**: 
+- Logo Ideation and Design
+- Design Document Entity
+- In-Person Consultation Frontend
+- Weekly Feedback and Survey Collection
+- Feedback and Review System
+- Language System
+**Jamil Ahmed**
+- Profile Management and Role-Based Access Control
+**Abdullah Al Jawad**
+- Physiotherapist Search and Initial Assessment
+- Appointment Booking and Scheduling
+**Muhammad Rohail Saleem Saleem**
+- Final Touches and Quality Assurance
+**Mustak Kabir**
+- Remote and In-Person Consultation
+**Samad Adekunle Olaibi**
+- User Authentication and Management
+- Exercise and Treatment Plan Management
+- Document Upload and Management
+- Exercise Adherence and Progress Tracking
+**Sharun Jeyaraman**
+- Notifications and Reminders
+**Md Nafiul Islam Khan**
+- 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contact
+- contact.physioease@gmail.com
