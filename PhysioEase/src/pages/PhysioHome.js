@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
+import './PhysioHome.css';
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../UserContext';
 
@@ -64,13 +64,11 @@ function Home() {
 
   return (
     <div>
-      <h1>{t('welcome', { name: user.firstName })}</h1>
+      <h1>{t('welcomeDr', { name: user.lastName })}</h1>
       <p>{t('today', { date: currentDate })}</p>
-      {user.trackingPlanCompleted ? (
-        <p>{t('trackingCompleted')}</p>
-      ) : (
-        <p>{t('trackingNotCompleted')}</p>
-      )}
+      <p>{t('allocation')}2{t('patients')}</p>
+      <p>{t('youHave')}4{t('consultationsMonth')}</p>
+      <p>{t('youHave')}3{t('slotsAvailable')}</p>
       <Link to="/faqs" className="faq-button">
         ?
       </Link>

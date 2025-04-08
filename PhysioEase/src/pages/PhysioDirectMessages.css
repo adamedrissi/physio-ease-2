@@ -1,0 +1,90 @@
+.direct-messages-page {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white, #fff);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .direct-messages-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .messages-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .message.sent {
+    background-color: #e0ffe0;
+    text-align: right;
+  }
+  
+  .message.received {
+    background-color: #e0f0ff;
+    text-align: left;
+  }
+  
+  .message-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .message-form input {
+    flex: 1;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .message-form button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  body.dark-mode .direct-messages-page {
+    background-color: #333;
+    color: #eee;
+    box-shadow: none;
+  }
+  
+  body.dark-mode .direct-messages-page .messages-container {
+    background-color: #444;
+    border-color: #666;
+  }
+  
+  body.dark-mode .direct-messages-page input,
+  body.dark-mode .direct-messages-page select,
+  body.dark-mode .direct-messages-page button {
+    background-color: #555;
+    color: #eee;
+    border: 1px solid #777;
+  }
+  
+  body.dark-mode .direct-messages-page button {
+    background-color: #4caf50;
+    border: none;
+  }
+
+  body.dark-mode .direct-messages-page .message {
+    color: #080808;
+  }

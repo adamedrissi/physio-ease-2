@@ -13,12 +13,15 @@ function TrackProgress() {
     specificFeedback: ''
   });
 
+  const [feedbackError, setFeedbackError] = useState('');
+
   const handleCompletedChange = (e) => {
     setUser({ ...user, trackingPlanCompleted: e.target.checked });
   };
 
   const handleFeedbackCheckbox = (e) => {
     setGiveFeedback(e.target.checked);
+    if (!e.target.checked) setFeedbackError('');
   };
 
   const handleFeedbackChange = (e) => {
@@ -30,7 +33,6 @@ function TrackProgress() {
   };
 
   const handleCancelFeedback = () => {
-    // Reset feedback and hide the feedback form
     setFeedback({
       question1: '',
       question2: '',
@@ -41,9 +43,12 @@ function TrackProgress() {
 
   const handleSubmitFeedback = (e) => {
     e.preventDefault();
-    // Process the feedback (e.g., send to an API)
+    if (!feedback.question1 || !feedback.question2 || !feedback.specificFeedback.trim()) {
+      setFeedbackError(t('pleaseAnswerAllQuestions'));
+      return;
+    }
+    setFeedbackError('');
     alert('Feedback submitted:\n' + JSON.stringify(feedback, null, 2));
-    // Reset form and hide feedback window
     setFeedback({
       question1: '',
       question2: '',
@@ -51,6 +56,26 @@ function TrackProgress() {
     });
     setGiveFeedback(false);
   };
+
+  /*const handleFeedbackSubmit = async (e) => {
+    e.preventDefault();
+  
+    const feedbackData = {
+      userId: user.id, // Assuming user context has the user's id
+      improvementRating: ratingValue1,  // Replace with your actual value from the closed question
+      videoEffectivenessRating: ratingValue2,  // Replace with your actual value
+      specificFeedback: feedbackText,  // The text from the open-ended question
+    };
+  
+    try {
+      const savedFeedback = await submitFeedback(feedbackData);
+      alert('Feedback submitted successfully!');
+      // Optionally clear the form/modal
+      closeFeedbackModal();
+    } catch (error) {
+      alert('Error submitting feedback. Please try again later.');
+    }
+  };*/
 
   return (
     <div>
@@ -214,6 +239,7 @@ function TrackProgress() {
                 cols="50"
               />
             </div>
+            {feedbackError && <p className="error">{feedbackError}</p>}
             <div style={{ marginTop: '10px' }}>
               <button type="button" onClick={handleCancelFeedback} style={{ marginRight: '10px' }}>{t('cancel')}</button>
               <button type="submit">{t('submit')}</button>

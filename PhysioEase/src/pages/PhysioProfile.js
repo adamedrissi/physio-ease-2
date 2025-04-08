@@ -84,6 +84,7 @@ function UserProfile() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -91,15 +92,15 @@ function UserProfile() {
     }
     
     try {
-      const updatedUser = { ...user };
-      localStorage.setItem('userProfile', JSON.stringify(updatedUser));
-      alert("Profile saved successfully!");
+      const updatedPhysio = { ...user };
+      localStorage.setItem('userProfile', JSON.stringify(updatedPhysio));
+      alert('Profile saved successfully!');
     } catch (err) {
       console.error("Error saving profile:", err);
       alert("Error saving profile. Please try again.");
     }
   };
-
+  
   return (
     <div>
       <h1>{t('editProfile')}</h1>
@@ -195,31 +196,47 @@ function UserProfile() {
           {errors.dateOfBirth && <span style={{ color: 'red' }}>{errors.dateOfBirth}</span>}
         </div>
         <div>
-          <label>{t('height')}</label>
-          <input 
-            type="number" 
-            name="height" 
-            value={user.height || ''} 
-            onChange={handleChange}
-            min="50"
-            max="250"
-          />
-          {errors.height && <span style={{ color: 'red' }}>{errors.height}</span>}
+          <label>{t('speciality')}</label>
+          <select name="speciality" value={user.speciality || ''} onChange={handleChange}>
+            <option value="">{t('enterSpeciality')}</option>
+            <option value="neurologicalDisorder">{t('neurologicalDisorder')}</option>
+            <option value="geriatrics">{t('geriatrics')}</option>
+            <option value="cardiovascularPulmonaryPhysiotherapy">{t('cardiovascularPulmonaryPhysiotherapy')}</option>
+            <option value="pediatricPhysiotherapy">{t('pediatricPhysiotherapy')}</option>
+            <option value="musculoskeletalPhysiotherapy">{t('musculoskeletalPhysiotherapy')}</option>
+            <option value="sportsPhysiotherapy">{t('sportsPhysiotherapy')}</option>
+            <option value="cardiovascularDisease">{t('cardiovascularDisease')}</option>
+            <option value="orthopedics">{t('orthopedics')}</option>
+            <option value="vestibularRehabilitation">{t('vestibularRehabilitation')}</option>
+            <option value="homecarePhysiotherapy">{t('homecarePhysiotherapy')}</option>
+            <option value="pediatrics">{t('pediatrics')}</option>
+            <option value="pelvicFloor">{t('pelvicFloor')}</option>
+            <option value="womensHealthPhysiotherapy">{t('womensHealthPhysiotherapy')}</option>
+            <option value="acupuncture">{t('acupuncture')}</option>
+            <option value="magneticTherapy">{t('magneticTherapy')}</option>
+            <option value="manualTherapy">{t('manualTherapy')}</option>
+            <option value="oncology">{t('oncology')}</option>
+            <option value="postOperativePhysiotherapist">{t('postOperativePhysiotherapist')}</option>
+            <option value="rehabilitation">{t('rehabilitation')}</option>
+            <option value="chestPhysiotherapy">{t('chestPhysiotherapy')}</option>
+            <option value="womensHealth">{t('womensHealth')}</option>
+          </select>
+          {errors.speciality && <span className="error">{errors.speciality}</span>}
         </div>
         <div>
-          <label>{t('weight')}</label>
+          <label>{t('yearsOfExperience')}</label>
           <input 
             type="number" 
-            name="weight" 
-            value={user.weight || ''} 
-            onChange={handleChange}
-            min="2"
-            max="600"
+            name="yearsOfExperience" 
+            value={user.yearsOfExperience || ''} 
+            onChange={handleChange} 
+            placeholder={t('enterYearsOfExperience')}
+            min="0"
           />
-          {errors.weight && <span style={{ color: 'red' }}>{errors.weight}</span>}
+          {errors.yearsOfExperience && <span className="error">{errors.yearsOfExperience}</span>}
         </div>
         <div>
-          <label>{t('address')}</label>
+          <label>{t('location')}</label>
           <input 
             type="text" 
             name="address" 

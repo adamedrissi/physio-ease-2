@@ -6,7 +6,7 @@ import { MdEventAvailable, MdVideoLibrary } from 'react-icons/md';
 import { FiMessageSquare } from 'react-icons/fi';
 import { FiSettings } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
-import './Sidebar.css';
+import './PhysioSidebar.css';
 
 function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
@@ -29,7 +29,7 @@ function Sidebar() {
           <Link to="/">{collapsed ? <AiFillHome size={24} /> : t('home')}</Link>
         </li>
         <li>
-          <Link to="/track-progress">{collapsed ? <FaChartLine size={24} /> : t('trackProgress')}</Link>
+          <Link to="/track-progress">{collapsed ? <FaChartLine size={24} /> : t('trackPatients')}</Link>
         </li>
         <li>
           <Link to="/consultations">{collapsed ? <MdEventAvailable size={24} /> : t('consultations')}</Link>
@@ -41,7 +41,7 @@ function Sidebar() {
         <Link to="/messages">{collapsed ? <FiMessageSquare size={24} /> : t('messages')}</Link>
         </li>
         <li>
-          <Link to="/profile">{collapsed ? <FaUser size={24} /> : t('userProfile')}</Link>
+          <Link to="/profile">{collapsed ? <FaUser size={24} /> : t('physioProfile')}</Link>
         </li>
         <li>
           <Link to="/settings">{collapsed ? <FiSettings size={24} /> : t('settings')}</Link>

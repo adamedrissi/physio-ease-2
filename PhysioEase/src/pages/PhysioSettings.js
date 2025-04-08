@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import './Settings.css';
+import './PhysioSettings.css';
 
 function Settings() {
   const { i18n, t } = useTranslation();

@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './VideoCategoryPage.css';
 
-// Sample video data for each category (replace with dynamic data as needed)
 const videoData = {
   resistance: [
     {
@@ -91,10 +90,8 @@ function VideoCategoryPage() {
     const { category } = useParams();
     const categoryVideos = videoData[category] || [];
     const { t } = useTranslation();
-    // Local state for videos with added "watched" and "rating" properties.
     const [videosState, setVideosState] = useState([]);
     
-    // Initialize videosState whenever the category changes.
     useEffect(() => {
       setVideosState(
         categoryVideos.map(video => ({
@@ -105,11 +102,9 @@ function VideoCategoryPage() {
       );
     }, [category, categoryVideos]);
     
-    // State for the rating modal
     const [ratingModalVideo, setRatingModalVideo] = useState(null);
     const [tempRating, setTempRating] = useState(0);
     
-    // Handle watched checkbox toggle
     const handleWatchedChange = (videoId, checked) => {
       setVideosState(prevVideos =>
         prevVideos.map(video =>
@@ -118,20 +113,16 @@ function VideoCategoryPage() {
       );
     };
     
-    // Open rating modal for a specific video
     const openRatingModal = (video) => {
       setRatingModalVideo(video);
-      // Set default rating (if already rated, use that; otherwise, start at 0)
       setTempRating(video.rating !== null ? video.rating : 0);
     };
     
-    // Close the rating modal
     const closeRatingModal = () => {
       setRatingModalVideo(null);
       setTempRating(0);
     };
     
-    // Handle rating submission and update the video's rating
     const handleRatingSubmit = (e) => {
       e.preventDefault();
       setVideosState(prevVideos =>
@@ -142,7 +133,6 @@ function VideoCategoryPage() {
       closeRatingModal();
     };
   
-    // Format category name for display
     const formatCategoryName = (slug) => {
       switch(slug) {
         case "resistance": return t('resistance');
