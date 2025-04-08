@@ -74,22 +74,29 @@ Our web application aims to bridge these gaps by providing a platform for remote
 - Weekly Feedback and Survey Collection
 - Feedback and Review System
 - Language System
+
 **Jamil Ahmed**:
 - Profile Management and Role-Based Access Control
+
 **Abdullah Al Jawad**:
 - Physiotherapist Search and Initial Assessment
 - Appointment Booking and Scheduling
+
 **Muhammad Rohail Saleem Saleem**:
 - Final Touches and Quality Assurance
+
 **Mustak Kabir**:
 - Remote and In-Person Consultation
+
 **Samad Adekunle Olaibi**:
 - User Authentication and Management
 - Exercise and Treatment Plan Management
 - Document Upload and Management
 - Exercise Adherence and Progress Tracking
+
 **Sharun Jeyaraman**:
 - Notifications and Reminders
+
 **Md Nafiul Islam Khan**:
 - 
 
