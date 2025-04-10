@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../UserContext';
-import { useNavigate } from 'react-router-dom';
+import { registerUser, loginUser } from '../services/apiService';
 import './RegisterLogin.css';
 
 function RegisterLogin() {
@@ -12,11 +13,17 @@ function RegisterLogin() {
   const [isLogin, setIsLogin] = useState(true);
 
   const [formData, setFormData] = useState({
-    role: 'patient',
+    role: 'patient',     
     firstName: '',
     lastName: '',
     email: '',
     password: '',
+    phoneNumber: '',
+    address: '',
+    sex: '',            
+    dateOfBirth: '',
+    speciality: '',        
+    yearsOfExperience: ''   
   });
 
   const [error, setError] = useState('');
@@ -40,39 +47,49 @@ function RegisterLogin() {
   }, [language, i18n]);
 
   const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     if (isLogin) {
-      const storedUserJSON = localStorage.getItem('registeredUser');
-      if (storedUserJSON) {
-        const storedUser = JSON.parse(storedUserJSON);
-        if (storedUser.email === formData.email && storedUser.password === formData.password) {
-          setUser(storedUser);
-          localStorage.setItem('userProfile', JSON.stringify(storedUser));
-          navigate('/');
-        } else {
-          setError(t('invalidCredentials'));
-        }
-      } else {
-        setError(t('noRegisteredUser'));
+      try {
+        const loggedInUser = await loginUser({
+          email: formData.email,
+          password: formData.password,
+        });
+        setUser(loggedInUser);
+        navigate('/');
+      } catch (err) {
+        setError(t('invalidCredentials'));
       }
     } else {
-      if (formData.firstName && formData.lastName && formData.email && formData.password) {
-        const newUser = { ...formData, id: Date.now() };
-        setUser(newUser);
-        localStorage.setItem('registeredUser', JSON.stringify(newUser));
-        localStorage.setItem('userProfile', JSON.stringify(newUser));
-        navigate('/');
-      } else {
+      const isValid =
+        formData.firstName &&
+        formData.lastName &&
+        formData.email &&
+        formData.password &&
+        formData.phoneNumber &&
+        formData.address &&
+        formData.sex &&
+        formData.dateOfBirth &&
+        (formData.role === 'patient' ||
+          (formData.role === 'physio' && formData.speciality && formData.yearsOfExperience));
+
+      if (!isValid) {
         setError(t('fillAllFields'));
+        return;
+      }
+
+      try {
+        const newUser = await registerUser(formData);
+        setUser(newUser);
+        navigate('/'); 
+      } catch (err) {
+        setError(err); 
       }
     }
   };
@@ -134,6 +151,7 @@ function RegisterLogin() {
       </div>
       <h2>{isLogin ? t('login') : t('register')}</h2>
       {error && <p className="error">{error}</p>}
+      
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>{t('selectRole')}</label>
@@ -142,61 +160,142 @@ function RegisterLogin() {
             <option value="physio">{t('physio')}</option>
           </select>
         </div>
+
         {!isLogin && (
           <>
             <div className="form-group">
-              <label>{t('firstName')}</label>
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-              />
+              <label>{t('firstname')}</label>
+              <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
             </div>
             <div className="form-group">
-              <label>{t('lastName')}</label>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-              />
+              <label>{t('lastname')}</label>
+              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label>{t('sex')}</label>
+              <select name="sex" value={formData.sex} onChange={handleChange} required>
+                <option value="">{t('selectSex')}</option>
+                <option value="male">{t('male')}</option>
+                <option value="female">{t('female')}</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label>{t('dob')}</label>
+              <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label>{t('phone')}</label>
+              <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label>{t('address')}</label>
+              <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+            </div>
+
+        {formData.role === 'patient' && (
+          <>
+          <div className="form-group">
+          <label>{t('height')}</label>
+          <input
+            type="number"
+            name="height"
+            value={formData.height}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>{t('weight')}</label>
+          <input
+            type="number"
+            name="weight"
+            value={formData.weight}
+            onChange={handleChange}
+            required
+            />
             </div>
           </>
         )}
+            {formData.role === 'physio' && (
+              <>
+                <div className="form-group">
+              <label>{t('speciality')}</label>
+                <select name="speciality" value={formData.speciality} onChange={handleChange} required>
+                  <option value="">{t('enterSpeciality')}</option>
+                    <option value="neurologicalDisorder">{t('neurologicalDisorder')}</option>
+                    <option value="geriatrics">{t('geriatrics')}</option>
+                    <option value="cardiovascularPulmonaryPhysiotherapy">{t('cardiovascularPulmonaryPhysiotherapy')}</option>
+                    <option value="pediatricPhysiotherapy">{t('pediatricPhysiotherapy')}</option>
+                    <option value="musculoskeletalPhysiotherapy">{t('musculoskeletalPhysiotherapy')}</option>
+                    <option value="sportsPhysiotherapy">{t('sportsPhysiotherapy')}</option>
+                    <option value="cardiovascularDisease">{t('cardiovascularDisease')}</option>
+                    <option value="orthopedics">{t('orthopedics')}</option>
+                    <option value="vestibularRehabilitation">{t('vestibularRehabilitation')}</option>
+                    <option value="homecarePhysiotherapy">{t('homecarePhysiotherapy')}</option>
+                    <option value="pediatrics">{t('pediatrics')}</option>
+                    <option value="pelvicFloor">{t('pelvicFloor')}</option>
+                    <option value="womensHealthPhysiotherapy">{t('womensHealthPhysiotherapy')}</option>
+                    <option value="acupuncture">{t('acupuncture')}</option>
+                    <option value="magneticTherapy">{t('magneticTherapy')}</option>
+                    <option value="manualTherapy">{t('manualTherapy')}</option>
+                    <option value="oncology">{t('oncology')}</option>
+                    <option value="postOperativePhysiotherapist">{t('postOperativePhysiotherapist')}</option>
+                    <option value="rehabilitation">{t('rehabilitation')}</option>
+                    <option value="chestPhysiotherapy">{t('chestPhysiotherapy')}</option>
+                    <option value="womensHealth">{t('womensHealth')}</option>
+                  </select>
+                </div>
+            <div className="form-group">
+              <label>{t('yearsOfExperience')}</label>
+              <input
+                type="number"
+                name="yearsOfExperience"
+                value={formData.yearsOfExperience}
+                onChange={handleChange}
+                placeholder={t('enterYearsOfExperience')}
+                required
+                min="0"
+                max="50"
+              />
+            </div>
+              </>
+            )}
+          </>
+        )}
+
         <div className="form-group">
-          <label>{t('email')}</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <label>{t('emaiL')}</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
         <div className="form-group">
           <label>{t('password')}</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
         </div>
+
         <button type="submit">{isLogin ? t('login') : t('register')}</button>
       </form>
+
       <p>
         {isLogin ? t('dontHaveAccount') : t('alreadyHaveAccount')}
         <button onClick={() => { setIsLogin(!isLogin); setError(''); }}>
           {isLogin ? t('registerHere') : t('loginHere')}
         </button>
       </p>
+      <div className="faq-links">
+        <Link to="/faqs2" className="button">{t('physioFAQs')}
+        </Link>
+      </div>
+      <div className="faq-links">
+        <Link to="/faqs1" className="button">{t('patientFAQs')}
+        </Link>
+      </div>
       <footer className="login-footer">
         <img src="/logo1024.png" alt="PhysioEase Logo" />
       </footer>
+      <footer>
+      {t('contact')}
+      </footer>
+        contact.physioease@gmail.com
     </div>
   );
 }

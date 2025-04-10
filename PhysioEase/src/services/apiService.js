@@ -1,74 +1,43 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'http://localhost:8081/auth',
-  timeout: 10000,
-});
+const API_BASE_URL = 'http://localhost:8081/api/auth'
 
 export const registerUser = async (userData) => {
   try {
-    const response = await api.post('/register', userData);
+    const response = await axios.post(`${API_BASE_URL}/register`, userData);
     return response.data;
   } catch (error) {
-    if (error.response && error.response.data) {
-      throw error.response.data;
-    }
-    throw error.message || 'Registration failed';
+    throw error.response?.data || error.message;
   }
 };
 
 export const loginUser = async (credentials) => {
   try {
-    const response = await api.post('/login', credentials);
+    const response = await axios.post(`${API_BASE_URL}/login`, credentials);
     return response.data;
   } catch (error) {
-    if (error.response && error.response.data) {
-      throw error.response.data;
-    }
-    throw error.message || 'Login failed';
+    throw error.response?.data || error.message;
   }
 };
 
-export const updateUserProfile = async (userId, userData) => {
+export const getUserProfile = async (userId) => {
   try {
-    const response = await api.put(`/users/${userId}`, userData);
+    const response = await axios.get(`http://localhost:8081/api/users/${userId}`);
     return response.data;
   } catch (error) {
-    console.error('Error updating profile:', error);
-    throw error;
+    throw error.response?.data || error.message;
   }
 };
 
-export const getUserById = async (userId) => {
-  try {
-    const response = await axios.get(`/api/users/${userId}`);
-    console.log("Backend response:", response.data);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching user data:", error);
-    throw error;
-  }
-};
-
-export const testConnection = async () => {
-  try {
-    const response = await axios.get('http://localhost:8081/api/test');
-    console.log("Test response:", response.data);
-    return response.data;
-  } catch (error) {
-    console.error("Connection test failed:", error);
-    throw error;
-  }
-};
+const API_BASE_URL2 = 'http://localhost:8081/api/feedback'
 
 export const submitFeedback = async (feedbackData) => {
   try {
-    const response = await api.post('/feedback', feedbackData);
+    const response = await axios.post(`${API_BASE_URL2}`, feedbackData);
     return response.data;
   } catch (error) {
-    console.error('Error submitting feedback:', error);
-    throw error;
+    throw error.response?.data || error.message;
   }
 };
 
-export default api;
+export default axios;

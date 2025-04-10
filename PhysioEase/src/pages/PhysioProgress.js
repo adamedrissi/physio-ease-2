@@ -7,9 +7,15 @@ function PhysioTrackProgress() {
   const [reports, setReports] = useState([]);
 
   useEffect(() => {
-    const storedFeedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-    setReports(storedFeedbacks);
+    const storedReports = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    setReports(storedReports);
   }, []);
+
+  const handleDeleteReport = (indexToDelete) => {
+    const updatedReports = reports.filter((report, index) => index !== indexToDelete);
+    setReports(updatedReports);
+    localStorage.setItem('feedbacks', JSON.stringify(updatedReports));
+  };
 
   return (
     <div className="physio-track-progress">
@@ -33,12 +39,9 @@ function PhysioTrackProgress() {
               <p>
                 <strong>{t('specificFeedback')}:</strong> {report.specificFeedback}
               </p>
-              {report.trackingPlanCompleted !== undefined && (
-                <p>
-                  <strong>{t('trackingPlanCompleted')}:</strong>{' '}
-                  {report.trackingPlanCompleted ? t('yes') : t('no')}
-                </p>
-              )}
+              <button onClick={() => handleDeleteReport(index)}>
+                {t('remove')}
+              </button>
             </div>
           ))}
         </div>

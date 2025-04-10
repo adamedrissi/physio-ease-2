@@ -54,7 +54,7 @@ Our web application aims to bridge these gaps by providing a platform for remote
 - **Other Tools**: Docker, postman for Testing and  API documentation
 
 ## Prerequisites
-- Java JDK (21)
+- Java JDK (23)
 - Node.js latest version
 
 ## Usage

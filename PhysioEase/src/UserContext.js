@@ -9,6 +9,7 @@ export const UserProvider = ({ children }) => {
     firstName: '',
     lastName: '',
     email: '',
+    password: '',
     phoneNumber: '',
     profilePicture: '',
     sex: '',

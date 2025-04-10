@@ -8,10 +8,10 @@ function Consultations() {
   return (
     <div>
       <h1>{t('consultations')}</h1>
-      <p>You have X Consultations this month.</p>
+      <p>{t('youHave')} X {t('consultationsMonth')}</p>
       <button type="change">{t('change')}</button>
       <button type="remove">{t('remove')}</button>
-      <p>You have X Slots still available.</p>
+      <p>{t('youHave')} X {t('slotsAvailable')}</p>
       <button type="add">{t('addSlots')}</button>
       <button type="remove">{t('removeSlots')}</button>
     </div>

@@ -231,7 +231,7 @@ function UserProfile() {
         <button type="submit">{t('saveProfile')}</button>
       </form>
       <button onClick={() => {setUser({});localStorage.removeItem('userProfile');}}>
-        Logout
+        {t('logout')}
       </button>
     </div>
   );

@@ -47,15 +47,16 @@ function Consultations() {
             longitude: position.coords.longitude,
           };
           setAutoLocation(coords);
-          alert(`Location detected: ${coords.latitude.toFixed(2)}, ${coords.longitude.toFixed(2)}`);
+          alert(t('locationDetected'));
+          alert(`${coords.latitude.toFixed(2)}, ${coords.longitude.toFixed(2)}`);
         },
         (error) => {
-          console.error("Error detecting location:", error);
-          alert("Error detecting location. Please enter your location manually.");
+          console.error(t('errorLocation'), error);
+          alert(t('errorLocation'));
         }
       );
     } else {
-      alert("Geolocation is not supported by your browser.");
+      alert(t('geoLocation'));
     }
   };
 
@@ -63,11 +64,11 @@ function Consultations() {
     e.preventDefault();
     let locationUsed = autoLocation ? `${autoLocation.latitude}, ${autoLocation.longitude}` : manualLocation;
     if (!locationUsed) {
-      alert("Please provide your location by detecting it or entering it manually.");
+      alert(t('pProvideLocation'));
       return;
     }
     if (!selectedSpeciality) {
-      alert("Please select a speciality.");
+      alert(t('pSelectSpeciality'));
       return;
     }
     console.log("Searching with:", { location: locationUsed, speciality: selectedSpeciality });
@@ -98,7 +99,8 @@ function Consultations() {
 
   const handleSchedule = (e) => {
     e.preventDefault();
-    alert(`Consultation scheduled with ${selectedDoctor.fullName} on ${scheduleDateTime}`);
+    alert(t('consultationScheduledWith'));
+    alert(`${selectedDoctor.fullName} - ${scheduleDateTime}`);
     closeModal();
   };
 
@@ -109,25 +111,26 @@ function Consultations() {
       
       <form onSubmit={handleSearch} className="search-form">
         <div className="form-group">
-          <label>Location:</label>
+          <label>{t('location')}</label>
+          {/*
           <input 
             type="text" 
             value={manualLocation} 
             onChange={(e) => setManualLocation(e.target.value)} 
             placeholder="Enter your location manually" 
-          />
-          <button type="button" onClick={handleDetectLocation}>Detect My Location</button>
+          />*/}
+          <button type="button" onClick={handleDetectLocation}>{t('detectMyLocation')}</button>
         </div>
         <div className="form-group">
-          <label>Speciality:</label>
+          <label>{t('speciality')}</label>
           <select value={selectedSpeciality} onChange={(e) => setSelectedSpeciality(e.target.value)}>
-            <option value="">Select Speciality</option>
+            <option value="">{t('enterSpeciality')}</option>
             {specialities.map((spec, index) => (
               <option key={index} value={spec}>{spec}</option>
             ))}
           </select>
         </div>
-        <button type="submit">Search</button>
+        <button type="submit">{t('search')}</button>
       </form>
 
       <div className="results-container">
@@ -138,9 +141,9 @@ function Consultations() {
             onClick={() => openModal(doctor)}
           >
             <h3>{doctor.fullName}</h3>
-            <p><strong>{t('speciality')}:</strong> {doctor.speciality}</p>
-            <p><strong>{t('location')}:</strong> {doctor.location}</p>
-            <p><strong>{t('email')}:</strong> {doctor.email}</p>
+            <p><strong>{t('speciality')}</strong> {doctor.speciality}</p>
+            <p><strong>{t('location')}</strong> {doctor.location}</p>
+            <p><strong>{t('email')}</strong> {doctor.email}</p>
           </div>
         ))}
       </div>

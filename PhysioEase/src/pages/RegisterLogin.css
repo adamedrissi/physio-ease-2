@@ -91,3 +91,30 @@
     max-width: 150px;
     opacity: 0.8;
   }
+  
+  /*.faq-button:hover {
+    background-color: #2980b9;
+  }
+
+  .faq-links {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .faq-button:first-child {
+    margin-right: auto;
+  }
+  
+  .faq-button:last-child {
+    margin-left: auto;
+  }
+  
+  .faq-button {
+    text-align: center;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+  }*/

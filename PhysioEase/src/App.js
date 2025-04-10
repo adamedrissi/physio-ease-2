@@ -138,6 +138,8 @@ function AppRoutes() {
     return (
       <Routes>
         <Route path="/login" element={<RegisterLogin />} />
+        <Route path="/faqs1" element={<FAQs />} />
+        <Route path="/faqs2" element={<PhysioFAQs />} />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     );

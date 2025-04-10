@@ -153,6 +153,19 @@ const resources = {
       question2: "Video Satisfaction",
       specificFeedback: "Open Feedback",
       submittedAt: "Submitted at",
+      logout: "Log Out",
+      search: "Search",
+      pSelectSpeciality: "Please select a speciality.",
+      searchingWith: "Searching with:",
+      consultationScheduledWith: "Consultation scheduled for: ",
+      detectMyLocation: "Detect Your Location",
+      pProvideLocation: "Please provide your location.",
+      geolocation: "Geolocation is not supported by your browser.",
+      errorLocation: "Error detecting location.",
+      locationDetected: "Location detected:",
+      contact: "Contact: ",
+      physioFAQs: "Physio FAQ",
+      patientFAQs: "Patient FAQ",
     }
   },
   af: { //Afrikaans
@@ -300,6 +313,9 @@ const resources = {
       question2: "Video tevredenheid",
       specificFeedback: "Oop terugvoer",
       submittedAt: "Voorlegging by",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
+      detectMyLocation: "Detect Your Location",
     }
   },
   am: { //Amharic
@@ -446,7 +462,9 @@ const resources = {
       question1: "የሳምንቱ ልምድ ማሻሻያ",
       question2: "የቪዲዮ እርግጠኝነት",
       specificFeedback: "ክፍተት አስተያየት",
-      submittedAt: "በተላከበት ጊዜ"
+      submittedAt: "በተላከበት ጊዜ",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ar: { //Modern Standard Arabic
@@ -594,6 +612,8 @@ const resources = {
       question2: "رضا الفيديو",
       specificFeedback: "تعليقات مفتوحة",
       submittedAt: "تم الإرسال في",
+      logout: "Log Out",
+      phoneNumber: "Phone Number ",
     }
   },
   bg: { //Bulgarian
@@ -741,6 +761,8 @@ const resources = {
       question2: "Удовлетвореност от видеото",
       specificFeedback: "Отворена обратна връзка",
       submittedAt: "Изпратено на",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   bn: { //Bengali/Bangla
@@ -888,6 +910,8 @@ const resources = {
       question2: "ভিডিও সন্তুষ্টি",
       specificFeedback: "খোলামেলা প্রতিক্রিয়া",
       submittedAt: "জমা দেওয়ার সময়",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ca: { //Catalan
@@ -1035,6 +1059,8 @@ const resources = {
       question2: "Satisfacció amb el vídeo",
       specificFeedback: "Feedback obert",
       submittedAt: "Enviat a",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   cs: { //Czech
@@ -1182,6 +1208,8 @@ const resources = {
       question2: "Spokojenost s videem",
       specificFeedback: "Otevřená zpětná vazba",
       submittedAt: "Odesláno v",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   cy: { //Welsh
@@ -1329,6 +1357,8 @@ const resources = {
       question2: "Cytundeb fideo",
       specificFeedback: "Adborth agored",
       submittedAt: "Cyflwynwyd ar",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   da: { //Danish
@@ -1476,6 +1506,8 @@ const resources = {
       question2: "Video tilfredshed",
       specificFeedback: "Åben feedback",
       submittedAt: "Indsendt kl",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   de: { //German
@@ -1623,6 +1655,8 @@ const resources = {
       question2: "Videobezufriedenheit",
       specificFeedback: "Offenes Feedback",
       submittedAt: "Eingereicht am",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   el: { //Greek
@@ -1770,6 +1804,8 @@ const resources = {
       question2: "Ικανοποίηση βίντεο",
       specificFeedback: "Ανοιχτή ανατροφοδότηση",
       submittedAt: "Υποβλήθηκε στις",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   es: { //Spanish
@@ -1782,7 +1818,7 @@ const resources = {
       home: "Página Principal",
       trackProgress: "Seguir Progreso",
       progressTrack: "Seguimiento de Progreso",
-      completeTracking: "Plan de Seguimiento Semanal Completado?",
+      completeTracking: "¿Plan de Seguimiento Semanal Completado?",
       giveFeedback: "¿Aportar Comentarios?",
       weekFeedback: "Formulario del Plan de Seguimiento de la Semana",
       qOne: "1. Del 0 al 5, ¿cuánto has mejorado desde la semana pasada?",
@@ -1829,12 +1865,12 @@ const resources = {
       weight: "Peso (kg): ",
       firstNameRequired: "Nombre es requerido",
       lastNameRequired: "Apellido es requerido",
-      emailRequired: "Email es requerido",
+      emailRequired: "Correo electrónico es requerido",
       sexRequired: "Sexo es requerido",
       dobRequired: "Fecha de nacimiento es requerida",
-      dobCorrect: "Por favor entre una fecha de nacimiento correcta",
+      dobCorrect: "Por favor introduzca una fecha de nacimiento correcta",
       heightRequired: "Altura es requerida",
-      heightCorrect: "Por favor entre una altura correcta",    
+      heightCorrect: "Por favor introduzca una altura correcta",    
       weightRequired: "Peso es requerido",
       weightCorrect: "Por favor entre un peso correcto",
       saveProfile: "Guardar Perfil",
@@ -1849,16 +1885,16 @@ const resources = {
       phone: "Número de Teléfono",
       both: "Ambos",
       login: "Iniciar Sesión",
-      register: "Registrar",
+      register: "Registrarse",
       firstname: "Nombre",
       lastname: "Apellido(s)",
       password: "Contraseña: ",
       invalidCredentials: "Email o contraseña inválida",
       fillAllFields: "Por favor rellene todos las casillas",
-      dontHaveAccount: "¿No tienes una cuenta? ",
-      alreadyHaveAccount: "¿Ya tienes una cuenta? ",
-      registerHere: "Registrar aquí",
-      loginHere: "Iniciar Sesión aquí",
+      dontHaveAccount: "¿No tiene una cuenta?",
+      alreadyHaveAccount: "¿Ya tiene una cuenta? ",
+      registerHere: "Registrarse Aquí",
+      loginHere: "Iniciar Sesión Aquí",
       messages: "Chat",
       directMessages: "Mensajes Directos",
       typeYourMessage: "Escriba su Mensaje..",
@@ -1875,9 +1911,9 @@ const resources = {
       issueDescription: "Descripción del Problema: ",
       trackPatients: "Seguir Pacientes",
       physioProfile: "Perfil de Fisio",
-      allocation: "Estás alocado a ",
+      allocation: "Está asignado a ",
       patients: " pacientes.",
-      youHave: "Tienes ",
+      youHave: "Tiene ",
       consultationsMonth: " consultas este mes.",
       slotsAvailable: " espacios todavía disponibles.",
       patientsTrack: "Reportes de Pacientes",
@@ -1888,35 +1924,52 @@ const resources = {
       welcomeDr: "Hola Dr. {{name}}!",
       enterSpeciality: "Introducir Especialidad",
       yearsOfExperience: "Años de Experiencia: ",
-      enterYearsOfExperience: "Introduce Años de Experiencia..",
-      neurologicalDisorder: "Neurological Disorder",
-      geriatrics: "Geriatrics",
-      cardiovascularPulmonaryPhysiotherapy: "Cardiovascular and Pulmonary Physiotherapy",
-      pediatricPhysiotherapy: "Pediatric Physiotherapy",
-      musculoskeletalPhysiotherapy: "Musculoskeletal Physiotherapy",
-      sportsPhysiotherapy: "Sports Physiotherapy",
-      cardiovascularDisease: "Cardiovascular Disease",
-      orthopedics: "Orthopedics",
-      vestibularRehabilitation: "Vestibular Rehabilitation",
-      homecarePhysiotherapy: "Homecare Physiotherapy",
-      pediatrics: "Pediatrics",
-      pelvicFloor: "Pelvic Floor",
-      womensHealthPhysiotherapy: "Women's Health Physiotherapy",
-      acupuncture: "Acupunture",
-      magneticTherapy: "Magnetic Therapy",
-      manualTherapy: "Manual Therapy",
-      oncology: "Oncology",
-      postOperativePhysiotherapist: "Post Operative Physiotherapy",
+      enterYearsOfExperience: "Introduzca Años de Experiencia..",
+      neurologicalDisorder: "Trastorno Neurológico",
+      geriatrics: "Geriatría",
+      cardiovascularPulmonaryPhysiotherapy: "Fisioterapia Cardiovascular y Pulmonar",
+      pediatricPhysiotherapy: "Fisioterapia Pediátrica",
+      musculoskeletalPhysiotherapy: "Fisioterapia Musculoesquelética",
+      sportsPhysiotherapy: "Fisioterapia Deportiva",
+      cardiovascularDisease: "Enfermedad Cardiovascular",
+      orthopedics: "Ortopedia",
+      vestibularRehabilitation: "Rehabilitación Vestibular",
+      homecarePhysiotherapy: "Fisioterapia de Atención Domiciliaria",
+      pediatrics: "Pediatría",
+      pelvicFloor: "Suelo Pélvico",
+      womensHealthPhysiotherapy: "Fisioterapia de Salud Femenina",
+      acupuncture: "Acupuntura",
+      magneticTherapy: "Terapia Magnética",
+      manualTherapy: "Terapia Manual",
+      oncology: "Oncología",
+      postOperativePhysiotherapist: "Fisioterapia Postoperativa",
       rehabilitation: "Rehabilitación",
-      chestPhysiotherapy: "Chest Physiotherapy",
-      womensHealth: "Women's Health",
-      pleaseAnswerAllQuestions: "Please Answer All Questions",
+      chestPhysiotherapy: "Fisioterapia Pectoral",
+      womensHealth: "Salud de la Mujer",
+      pleaseAnswerAllQuestions: "Por favor, conteste todas las preguntas",
       physioTrackProgress: "Reportes de Pacientes",
       noReportsFound: "Ningún Reporte Encontrado",
       question1: "Mejora Semanal",
       question2: "Satisfacción de los Vídeos",
       specificFeedback: "Comentarios",
       submittedAt: "Enviado en",
+      logout: "Cerrar Sesión",
+      phoneNumber: "Número de Teléfono: ",
+      address: "Dirección: ",
+      phoneNumberRequired: "Número de Teléfono es requerido",
+      addressRequired: "Dirección es requerida",
+      detectMyLocation: "Detectar Su Ubicación",
+      search: "Buscar",
+      pSelectSpeciality: "Por favor, seleccione una especialidad.",
+      consultationScheduledWith: "Consulta programada para: ",
+      searchingWith: "Buscando con:",
+      pProvideLocation: "Por favor, proporcione su ubicación.",
+      geolocation: "Geolocalización no es compatible con su navegador.",
+      errorLocation: "Error detectando ubicación.",
+      locationDetected: "Ubicación Detectada:",
+      contact: "Contacto: ",
+      physioFAQs: "Preguntas Frequentes de Fisio",
+      patientFAQs: "Preguntas Frequentes de Paciente",
     }
   },
   eu: { //Basque
@@ -2064,6 +2117,8 @@ const resources = {
       question2: "Bideoarekiko asebetetze",
       specificFeedback: "Irekiko iritzia",
       submittedAt: "Bidali zen",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   fa: { //Farsi
@@ -2211,6 +2266,8 @@ const resources = {
       question2: "رضایت از ویدیو",
       specificFeedback: "بازخورد آزاد",
       submittedAt: "ارسال شده در",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   fr: { //French
@@ -2285,19 +2342,19 @@ const resources = {
       darkMode: "Mode Sombre",
       language: "Langue",
       notificationPreference: "Préférence de notification",
-      lightMode: "Mode clair",
+      lightMode: "Mode Clair",
       emaiL: "Email",
       phone: "Numéro de téléphone",
       both: "Les deux",
       login: "Connexion",
       register: "Inscription",
       firstname: "Prénom",
-      lastname: "Nom de famille",
-      password: "Mot de passe: ",
+      lastname: "Nom de Famille",
+      password: "Mot de Passe: ",
       invalidCredentials: "Email ou mot de passe invalide",
       fillAllFields: "Veuillez remplir tous les champs",
-      dontHaveAccount: "Vous n'avez pas de compte ? ",
-      alreadyHaveAccount: "Vous avez déjà un compte ? ",
+      dontHaveAccount: "Vous n'avez pas de compte?",
+      alreadyHaveAccount: "Vous avez déjà un compte?",
       registerHere: "Inscrivez-vous ici",
       loginHere: "Connectez-vous ici",
       messages: "Chat",
@@ -2307,15 +2364,15 @@ const resources = {
       send: "Envoyer",
       patient: "Patient",
       physio: "Physiothérapeute",
-      selectRole: "Sélectionnez le rôle",
+      selectRole: "Sélectionnez le Rôle",
       reportFeedback: "Signaler",
       name: "Nom: ",
-      reportType: "Sélectionnez le type de rapport: ",
+      reportType: "Sélectionnez le Type de Rapport: ",
       errorBug: "Bogue/Erreur",
-      misbehaviourAbuse: "Mauvais comportement/Abus",
-      issueDescription: "Description du problème: ",
-      trackPatients: "Suivre les patients",
-      physioProfile: "Profil du physio",
+      misbehaviourAbuse: "Mauvais Comportement/Abus",
+      issueDescription: "Description du Problème: ",
+      trackPatients: "Suivre les Patients",
+      physioProfile: "Profil du Physio",
       allocation: "Vous êtes affecté à ",
       patients: " patients",
       youHave: "Vous avez ",
@@ -2324,40 +2381,42 @@ const resources = {
       patientsTrack: "Rapports des patients",
       change: "Changer",
       remove: "Supprimer",
-      addSlots: "Ajouter des créneaux",
-      removeSlots: "Supprimer des créneaux",
+      addSlots: "Ajouter des Créneaux",
+      removeSlots: "Supprimer des Créneaux",
       welcomeDr: "Bonjour Dr. {{name}}!",
-      enterSpeciality: "Entrez la spécialité",
-      yearsOfExperience: "Années d'expérience: ",
-      enterYearsOfExperience: "Entrez les années d'expérience...",
-      neurologicalDisorder: "Trouble neurologique",
+      enterSpeciality: "Entrez la Spécialité",
+      yearsOfExperience: "Années d'Expérience: ",
+      enterYearsOfExperience: "Entrez les Années d'Expérience...",
+      neurologicalDisorder: "Trouble Neurologique",
       geriatrics: "Gériatrie",
-      cardiovascularPulmonaryPhysiotherapy: "Physiothérapie cardiovasculaire et pulmonaire",
-      pediatricPhysiotherapy: "Physiothérapie pédiatrique",
-      musculoskeletalPhysiotherapy: "Physiothérapie musculosquelettique",
-      sportsPhysiotherapy: "Physiothérapie sportive",
-      cardiovascularDisease: "Maladie cardiovasculaire",
+      cardiovascularPulmonaryPhysiotherapy: "Physiothérapie Cardiovasculaire et Pulmonaire",
+      pediatricPhysiotherapy: "Physiothérapie Pédiatrique",
+      musculoskeletalPhysiotherapy: "Physiothérapie Musculosquelettique",
+      sportsPhysiotherapy: "Physiothérapie Sportive",
+      cardiovascularDisease: "Maladie Cardiovasculaire",
       orthopedics: "Orthopédie",
-      vestibularRehabilitation: "Rééducation vestibulaire",
-      homecarePhysiotherapy: "Physiothérapie à domicile",
+      vestibularRehabilitation: "Rééducation Vestibulaire",
+      homecarePhysiotherapy: "Physiothérapie à Domicile",
       pediatrics: "Pédiatrie",
-      pelvicFloor: "Plancher pelvien",
-      womensHealthPhysiotherapy: "Physiothérapie pour la santé des femmes",
+      pelvicFloor: "Plancher Pelvien",
+      womensHealthPhysiotherapy: "Physiothérapie pour la Santé des Femmes",
       acupuncture: "Acupuncture",
-      magneticTherapy: "Thérapie magnétique",
-      manualTherapy: "Thérapie manuelle",
+      magneticTherapy: "Thérapie Magnétique",
+      manualTherapy: "Thérapie Manuelle",
       oncology: "Oncologie",
-      postOperativePhysiotherapist: "Physiothérapie post-opératoire",
+      postOperativePhysiotherapist: "Physiothérapie Post-Opératoire",
       rehabilitation: "Réhabilitation",
-      chestPhysiotherapy: "Physiothérapie thoracique",
-      womensHealth: "Santé des femmes",
+      chestPhysiotherapy: "Physiothérapie Thoracique",
+      womensHealth: "Santé des Femmes",
       pleaseAnswerAllQuestions: "Veuillez répondre à toutes les questions",
-      physioTrackProgress: "Rapports des patients",
-      noReportsFound: "Aucun rapport trouvé",
-      question1: "Amélioration hebdomadaire",
-      question2: "Satisfaction vidéo",
-      specificFeedback: "Retour d'information ouvert",
+      physioTrackProgress: "Rapports des Patients",
+      noReportsFound: "Aucun Rapport Trouvé",
+      question1: "Amélioration Hebdomadaire",
+      question2: "Satisfaction Vidéo",
+      specificFeedback: "Retour d'Information Ouvert",
       submittedAt: "Soumis le",
+      logout: "Log Out",
+      phoneNumber: "Numéro de Téléphone: ",
     }
   },
   gl: { //Galician
@@ -2505,6 +2564,8 @@ const resources = {
       question2: "Satisfacción co vídeo",
       specificFeedback: "Feedback aberto",
       submittedAt: "Enviado ás",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   he: { //Hebrew
@@ -2652,6 +2713,8 @@ const resources = {
       question2: "שביעות רצון מהווידאו",
       specificFeedback: "משוב פתוח",
       submittedAt: "נשלח ב",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   hi: { //Hindi
@@ -2799,6 +2862,8 @@ const resources = {
       question2: "वीडियो संतुष्टि",
       specificFeedback: "खुला फीडबैक",
       submittedAt: "सबमिट किया गया",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   hu: { //Hungarian
@@ -2946,6 +3011,8 @@ const resources = {
       question2: "Videó elégedettség",
       specificFeedback: "Nyílt visszajelzés",
       submittedAt: "Elküldve",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   id: { //Indonesian
@@ -3093,6 +3160,8 @@ const resources = {
       question2: "Kepuasan Video",
       specificFeedback: "Umpan Balik Terbuka",
       submittedAt: "Dikirim pada",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   it: { //Italian
@@ -3240,6 +3309,8 @@ const resources = {
       question2: "Soddisfazione video",
       specificFeedback: "Feedback aperto",
       submittedAt: "Inviato alle",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ja: { //Japanese
@@ -3387,6 +3458,8 @@ const resources = {
       question2: "ビデオの満足度",
       specificFeedback: "自由なフィードバック",
       submittedAt: "提出日時",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ko: { //Korean
@@ -3534,6 +3607,8 @@ const resources = {
       question2: "비디오 만족도",
       specificFeedback: "자유로운 피드백",
       submittedAt: "제출됨",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ku: { //Kurdish (Kurmanji)
@@ -3681,6 +3756,8 @@ const resources = {
       question2: "Razîbûn ji videoyê",
       specificFeedback: "Feedback vekirî",
       submittedAt: "Hat şandin li",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   my: { //Burmese
@@ -3828,6 +3905,8 @@ const resources = {
       question2: "ဗွီဒီယိုကျေနပ်မှု",
       specificFeedback: "ဖွင့်လှစ်သောတုံ့ပြန်ချက်",
       submittedAt: "တင်သွင်းသည့်အချိန်",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   nl: { //Dutch
@@ -3975,6 +4054,8 @@ const resources = {
       question2: "Videotilfredshet",
       specificFeedback: "Open feedback",
       submittedAt: "Ingediend op",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   no: { //Norwegian
@@ -4121,7 +4202,9 @@ const resources = {
       question1: "Ukentlig forbedring",
       question2: "Videotilfredshet",
       specificFeedback: "Åpen tilbakemelding",
-      submittedAt: "Innsendt"
+      submittedAt: "Innsendt",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   pl: { //Polish
@@ -4269,6 +4352,8 @@ const resources = {
       question2: "Satysfakcja z wideo",
       specificFeedback: "Otwarta opinia",
       submittedAt: "Przesłano o",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   pt: { //Portuguese
@@ -4416,6 +4501,8 @@ const resources = {
       question2: "Satisfação com o vídeo",
       specificFeedback: "Feedback Aberto",
       submittedAt: "Enviado às",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ro: { //Romanian
@@ -4563,6 +4650,8 @@ const resources = {
       question2: "Satisfacție video",
       specificFeedback: "Feedback deschis",
       submittedAt: "Trimis la",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ru: { //Russian
@@ -4710,6 +4799,8 @@ const resources = {
       question2: "Удовлетворённость видео",
       specificFeedback: "Открытый отзыв",
       submittedAt: "Отправлено в",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   sh: { //Serbo-Croatian
@@ -4857,6 +4948,8 @@ const resources = {
       question2: "Zadovoljstvo videom",
       specificFeedback: "Otvorena povratna informacija",
       submittedAt: "Poslano u",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   sq: { //Albanian
@@ -5004,6 +5097,8 @@ const resources = {
       question2: "Kënaqësi nga video",
       specificFeedback: "Feedback i hapur",
       submittedAt: "Paraqitur më",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   sv: { //Swedish
@@ -5151,6 +5246,8 @@ const resources = {
       question2: "Videotillfredsställelse",
       specificFeedback: "Öppen feedback",
       submittedAt: "Inskickat",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   sw: { //Swahili
@@ -5298,6 +5395,8 @@ const resources = {
       question2: "Kuridhika kwa video",
       specificFeedback: "Maoni wazi",
       submittedAt: "Imewasilishwa",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   th: { //Thai
@@ -5445,6 +5544,8 @@ const resources = {
       question2: "ความพึงพอใจในวิดีโอ",
       specificFeedback: "ความคิดเห็นเปิด",
       submittedAt: "ส่งเมื่อ",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   tl: { //Tagalog
@@ -5592,6 +5693,8 @@ const resources = {
       question2: "Kasiyahan sa Video",
       specificFeedback: "Bukas na Feedback",
       submittedAt: "Isinumite noong",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   tr: { //Turkish
@@ -5739,6 +5842,8 @@ const resources = {
       question2: "Video Memnuniyeti",
       specificFeedback: "Açık Geri Bildirim",
       submittedAt: "Gönderildi",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   uk: { //Ukrainian
@@ -5886,6 +5991,8 @@ const resources = {
       question2: "Задоволеність відео",
       specificFeedback: "Відкритий відгук",
       submittedAt: "Надіслано",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   ur: { //Urdu
@@ -6033,6 +6140,8 @@ const resources = {
       question2: "ویڈیو تسلی",
       specificFeedback: "کھلا فیڈ بیک",
       submittedAt: "جمع کرایا گیا",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   vi: { //Vietnamese
@@ -6180,6 +6289,8 @@ const resources = {
       question2: "Sự hài lòng với video",
       specificFeedback: "Phản hồi mở",
       submittedAt: "Đã gửi vào",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   },
   zh: { //Mandarin Standard Chinese
@@ -6327,6 +6438,8 @@ const resources = {
       question2: "视频满意度",
       specificFeedback: "开放反馈",
       submittedAt: "提交于",
+      logout: "Log Out",
+      phoneNumber: "Phone Number: ",
     }
   }
 };

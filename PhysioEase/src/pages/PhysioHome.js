@@ -66,9 +66,9 @@ function Home() {
     <div>
       <h1>{t('welcomeDr', { name: user.lastName })}</h1>
       <p>{t('today', { date: currentDate })}</p>
-      <p>{t('allocation')}2{t('patients')}</p>
-      <p>{t('youHave')}4{t('consultationsMonth')}</p>
-      <p>{t('youHave')}3{t('slotsAvailable')}</p>
+      <p>{t('allocation')}X{t('patients')}</p>
+      <p>{t('youHave')}X{t('consultationsMonth')}</p>
+      <p>{t('youHave')}X{t('slotsAvailable')}</p>
       <Link to="/faqs" className="faq-button">
         ?
       </Link>
