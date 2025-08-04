@@ -27,6 +27,6 @@ public class Feedback {
     @Column(columnDefinition = "TEXT")
     private String specificFeedback;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    private LocalDateTime submittedAt = LocalDateTime.now();
+    //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
+    private LocalDateTime submittedAt;
 }

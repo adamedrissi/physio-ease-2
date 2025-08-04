@@ -18,16 +18,20 @@ public class User {
     private String email;
     private String password;
     private String phoneNumber;
-    //@Column(length = 1000)
+    @Column(length = 100000)
     private String profilePicture;
     private String sex;
     private LocalDate dateOfBirth;
+    @Column(length = 500)
+    private String address;
+    private String country;
+    private double latitude;
+    private double longitude;
     //patient
     private Integer height;
     private Integer weight;
     //physio
     private String speciality;
-    private Integer yearsOfExperience;
-    //patient
-    private Boolean trackingPlanCompleted = false;
+    private Integer yearsSinceLicensed;
+    private String companyName;
 }
