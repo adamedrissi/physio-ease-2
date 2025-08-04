@@ -1,0 +1,39 @@
+.physio-video-library {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Figtree', sans-serif;
+  color: white;
+}
+
+.video-category {
+  margin-bottom: 3rem;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-card {
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  color: white;
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.video-card .rating {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}

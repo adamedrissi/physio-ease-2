@@ -1,0 +1,19 @@
+.home {
+  text-align: center;
+  font-family: 'Figtree';
+}
+
+.track-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.track-button:hover {
+  background-color: #1565c0;
+}

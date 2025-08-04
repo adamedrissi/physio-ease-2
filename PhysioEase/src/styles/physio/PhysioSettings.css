@@ -1,0 +1,21 @@
+.settings2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Figtree';
+  text-align: center;
+}
+
+.setting-item2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.setting-item label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
