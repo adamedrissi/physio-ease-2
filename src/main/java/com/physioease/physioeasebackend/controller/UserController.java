@@ -59,7 +59,6 @@ public class UserController {
         User existingUser = optionalUser.get();
 
         existingUser.setPhoneNumber(updatedUser.getPhoneNumber());
-        existingUser.setProfilePicture(updatedUser.getProfilePicture());
         existingUser.setEmail(updatedUser.getEmail());
         existingUser.setHeight(updatedUser.getHeight());
         existingUser.setWeight(updatedUser.getWeight());

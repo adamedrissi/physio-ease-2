@@ -18,8 +18,6 @@ public class User {
     private String email;
     private String password;
     private String phoneNumber;
-    @Column(length = 100000)
-    private String profilePicture;
     private String sex;
     private LocalDate dateOfBirth;
     @Column(length = 500)
